@@ -1,0 +1,22 @@
+{
+  "name": "@desainr/pfrhtmlscraper",
+  "version": "1.0.0",
+  "description": "Scrapes Pro Football Reference draft pages",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/desainr/pfrhtmlscraper.git"
+  },
+  "author": "Nicholas Desai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/desainr/pfrhtmlscraper/issues"
+  },
+  "homepage": "https://github.com/desainr/pfrhtmlscraper#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.5"
+  }
+}
