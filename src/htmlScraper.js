@@ -1,4 +1,6 @@
 const cheerio = require('cheerio');
+const { nanoid } = require('nanoid');
+
 const {
   PFR_PLAYER_INFO_SELECTORS,
   PFR_PLAYER_STATS_SELECTORS,
@@ -37,11 +39,19 @@ const scrapeDraftPageData = (html, year) => {
     }
 
     const playerId = row.children(`[${PFR_PLAYER_INFO_SELECTORS.player}]`).data(PFR_DATA_VALUES.playerId);
+
+    if (playerId && playerId.length === 8) {
+      draftData.player_id = playerId;
+      playerData.id = playerId;
+    } else {
+      const id = nanoid(8);
+      draftData.player_id = id;
+      playerData.id = id;
+    }
+
     const teamId = PFR_TEAM_TO_ID(playerData.team)
-    draftData.player_id = playerId;
     draftData.team_id = teamId;
     draftData.year = year;
-    playerData.id = playerId;
     playerData.team_id = teamId;
 
     allPlayerData.push(playerData);
