@@ -2,10 +2,11 @@ const PFR_PLAYER_INFO_SELECTORS = {
   team: 'data-stat="team"',
   player: 'data-stat="player"',
   position: 'data-stat="pos"',
-  age: 'data-stat="age"'
+  age: 'data-stat="age"',
 };
 
 const PFR_PLAYER_STATS_SELECTORS = {
+  last_active: 'data-stat="year_max"',
   games: 'data-stat="g"',
   pass_cmp: 'data-stat="pass_cmp"',
   pass_att: 'data-stat="pass_att"',
