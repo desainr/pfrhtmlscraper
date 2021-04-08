@@ -27,7 +27,7 @@ const scrapeDraftPageData = (html, year) => {
     const draftData = {};
 
     for (const [key, value] of Object.entries(PFR_PLAYER_INFO_SELECTORS)) {
-      playerData[key] = row.children(`[${value}]`).text();
+      playerData[key] = row.children(`[${value}]`).text().trim();
     }
 
     for (const [key, value] of Object.entries(PFR_PLAYER_STATS_SELECTORS)) {
