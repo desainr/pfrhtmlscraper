@@ -22,6 +22,7 @@ const PFR_PLAYER_STATS_SELECTORS = {
   tackles: 'data-stat="tackles_solo"',
   def_ints: 'data-stat="def_int"',
   sacks: 'data-stat="sacks"',
+  college: 'data-stat="college_id"'
 };
 
 const PFR_DRAFT_DATA_SELECTORS = {
