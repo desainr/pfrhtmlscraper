@@ -1,6 +1,6 @@
 {
   "name": "@desainr/htmlscraper",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Scrapes Pro Football Reference draft pages",
   "main": "index.js",
   "scripts": {
