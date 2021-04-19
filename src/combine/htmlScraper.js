@@ -1,4 +1,5 @@
 const cheerio = require('cheerio');
+const {playerMatch} = require("./combineUtils");
 const {COMBINE_SELECTORS} = require('./combineUtils');
 
 const scrapeCombineDataMatchPlayers = (html, players) => {
@@ -14,7 +15,7 @@ const scrapeCombineDataMatchPlayers = (html, players) => {
 
     const player = row.children().eq(1).text();
 
-    const match = players.filter(p => playerMatch(p.trim(), player.trim()));
+    const match = players.filter(p => playerMatch(p.player.trim(), player.trim()));
 
     if (match && match.length === 1) {
       const combinePlayerEntry = {
@@ -37,38 +38,6 @@ const scrapeCombineDataMatchPlayers = (html, players) => {
   return matchingPlayers;
 }
 
-const playerMatch = (p1, p2) => {
-  const suffixes = ['Jr', 'Sr', 'II', 'III', 'IV', 'V']
-
-  if (p1 === p2) {
-    return true;
-  }
-
-  const p1Stripped = p1.replace(/[.]/g, '');
-  const p2Stripped = p2.replace(/[.]/g, '');
-
-  if (p1Stripped === p2Stripped) {
-    return true;
-  }
-
-  let p1NoSuffix = p1;
-  let p2NoSuffix = p2;
-
-  suffixes.forEach(s => {
-    if (p1.includes(s)) {
-      const index = p1.lastIndexOf(s);
-      p1NoSuffix = p1.substring(0, index);
-    }
-
-    if (p2.includes(s)) {
-      const index = p2.lastIndexOf(s);
-      p2NoSuffix = p2.substring(0, index);
-    }
-  });
-
-  return p1NoSuffix === p2NoSuffix;
-}
-
 const defaultNumber = (stringValue) => {
   if (stringValue) {
     return Number(stringValue);
@@ -78,6 +47,5 @@ const defaultNumber = (stringValue) => {
 }
 
 module.exports = {
-  playerMatch,
   scrapeCombineDataMatchPlayers,
 }

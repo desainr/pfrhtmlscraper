@@ -1,4 +1,4 @@
-const {playerMatch} = require('../combine/htmlScraper');
+const {playerMatch} = require('../combine/combineUtils');
 
 describe('playerMatch', function () {
   const positiveCases = [
