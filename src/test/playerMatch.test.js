@@ -30,6 +30,10 @@ describe('playerMatch', function () {
       p1: 'TJ Houshmanzadeh',
       p2: 'T.J. Houshmanzadeh',
     },
+    {
+      p1: 'Henry Ruggs',
+      p2: 'Henry Ruggs III',
+    }
   ]
 
   const negativeCases = [
@@ -43,13 +47,13 @@ describe('playerMatch', function () {
     }
   ]
 
-  test('positive cases are true', () => {
+  it('positive cases are true', () => {
     positiveCases.forEach(testCase => {
       expect(playerMatch(testCase.p1, testCase.p2)).toBeTruthy();
     })
   })
 
-  test('negative cases are false', () => {
+  it('negative cases are false', () => {
     negativeCases.forEach(testCase => {
       expect(playerMatch(testCase.p1, testCase.p2)).toBeFalsy();
     })
