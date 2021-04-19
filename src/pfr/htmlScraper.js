@@ -50,9 +50,17 @@ const scrapeDraftPageData = (html, year) => {
     }
 
     const teamId = PFR_TEAM_TO_ID(playerData.team)
+
+    const isHof = playerData.player.endsWith('HOF');
+
+    if (isHof) {
+      playerData.player = playerData.player.substring(playerData.player, playerData.player.length - 3);
+    }
+
     draftData.team_id = teamId;
     draftData.year = year;
     playerData.team_id = teamId;
+    playerData.hof = isHof;
 
     allPlayerData.push(playerData);
     allDraftData.push(draftData);
