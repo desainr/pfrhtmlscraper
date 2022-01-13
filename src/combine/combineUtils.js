@@ -4,7 +4,6 @@ const COMBINE_SELECTORS = {
 
 // PLEASE NO ONE LOOK AT THIS
 const playerMatch = (p1, p2) => {
-  console.log('Actually running my code');
   const suffixes = ['Jr', 'Sr', 'III', 'II', 'IV', 'V']
 
   if (p1 === p2) {

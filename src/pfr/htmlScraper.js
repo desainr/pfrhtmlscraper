@@ -40,7 +40,7 @@ const scrapeDraftPageData = (html, year) => {
 
     const playerId = row.children(`[${PFR_PLAYER_INFO_SELECTORS.player}]`).data(PFR_DATA_VALUES.playerId);
 
-    if (playerId && playerId.length === 8) {
+    if (playerId && playerId.length > 0 && playerId.length < 16) {
       draftData.player_id = playerId;
       playerData.id = playerId;
     } else {
