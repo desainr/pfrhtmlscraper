@@ -33,7 +33,11 @@ describe('playerMatch', function () {
     {
       p1: 'Henry Ruggs',
       p2: 'Henry Ruggs III',
-    }
+    },
+    {
+      p1: 'Wan\'Dale Robinson',
+      p2: 'WanDale Robinson',
+    },
   ]
 
   const negativeCases = [

@@ -10,8 +10,8 @@ const playerMatch = (p1, p2) => {
     return true;
   }
 
-  const p1Stripped = p1.replace(/[.]/g, '');
-  const p2Stripped = p2.replace(/[.]/g, '');
+  const p1Stripped = p1.replace(/[.']/g, '');
+  const p2Stripped = p2.replace(/[.']/g, '');
 
   if (p1Stripped === p2Stripped) {
     return true;

@@ -9,6 +9,7 @@ const scrapeCombineDataMatchPlayers = (html, players) => {
   const combineRows = $(`${COMBINE_SELECTORS.table} tbody tr`);
 
   const matchingPlayers = [];
+  const unmatchedPlayers = [];
 
   for (const combineRow of combineRows) {
     const row = $(combineRow);
@@ -32,10 +33,15 @@ const scrapeCombineDataMatchPlayers = (html, players) => {
       }
 
       matchingPlayers.push(combinePlayerEntry);
+    } else {
+      unmatchedPlayers.push(player);
     }
   }
 
-  return matchingPlayers;
+  return {
+    matchingPlayers,
+    unmatchedPlayers,
+  };
 }
 
 const defaultNumber = (stringValue) => {
